@@ -145,6 +145,23 @@ function  countTheNumber(num){
 console.log(countTheNumber(10))
 
 
+
+
+//====>>>> Given Exercise Problem from chapter3
+
+function countBS (string ,char){
+        let reg = char ;
+        let count = 0;
+     for(let i = 0 ; i < string.length ; i++){
+        if(string[i] === reg){
+            count ++}
+     }
+     return count
+} 
+//  console.log(countBS("ROHiBBBBBB1t" ,"B"))
+
+
+
 // for loop for pritning the solution numbers in the loop
 function count(num){
     for(let i = num; i >= 1; i--){
@@ -153,9 +170,30 @@ function count(num){
 
 
  }
-// console.log(count(5))
 
+ // to check whethe the input is sting or not
+  function is_String(string){
+    let reg = /[a-zA-Z]/;
+    if(reg.test(string)){
+        return true
+    }else {
+        return false
+    }
 
+  }
+ console.log(is_String("a"))
+
+ // wirting a function to convert a string into array of Words
+
+ const arrayOfWord = (string) =>{
+    let Word = [];
+    for (let char of string){
+        console.log(char)
+        Word.push(char)
+    }
+        return Word;
+ }
+console.log(arrayOfWord("ROHIT"));
 
 // Chapter practise on other topics
 // array Loops insted of for loop
