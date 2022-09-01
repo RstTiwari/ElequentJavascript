@@ -1,21 +1,132 @@
-// //Methods
-// /* every string or object has number of
-// properties that hold fucntion values*/
+//===>>>>>Propeties
+// almsot all Javascript value has Poperties except null and undefined 
+//console.log("nullLenght", null.lenght);
+// so basically there are two type to acess the properties of value
+// by dot . notation or by box [] notation
+// the only diffrence between these two method is depend on scenerio we are looking for 
+
+let array = [ 1,2 ,3,5]
+//console.log(array.length)  // easier to write yth array["length"]
+let value1 = "ROhit";
+//console.log(typeof value1.toUpperCase);
+//console.log(value1.toUpperCase());
+
+//===>>>>>Methods
+/* every string or object has number of
+  properties that hold fucntion values   this properties are called as Method  */
+// take a example of methoda
+let array1 = [1, 5, 3, 4, 6, 7, 8];
+array1.push(4);
+array1.push(6);
+//console.log(array);
+
+//===>>>> Objects
+
+let details = {
+  name: "ROhit",
+  class: 10,
+  sub: ["maths", "number", "schools"],
+  other: {
+    dad: "Ratan",
+    mom: {
+      father: "Sharda",
+      mother: "sarita"
+    }
+  }
+};
+
+Object.assign(details , {love:"I love Book"})
+
+delete details.love
+//console.log(details)
+
+// going deeper into an Object for mutation
+if("sub" in  details){
+    for( val of details.sub){
+    //console.log("object", val);
+ }
+}
+
+
+// finding the key of an object
+let key = Object.keys(details.other)
+let value = Object.values(details)
+console.log(key);
+console.log(value);
 
 
 
-// let value1 = "ROhit";
-// console.log(typeof value1.toUpperCase);
-// console.log(value1.toUpperCase());
-// /*properties that contain fucntions are
-// genrally called as Methods*/
 
-// // take a example of methoda
-// let array = [1, 5, 3, 4, 6, 7, 8];
-// array.push(4);
-// array.push(6);
-// console.log(array);
-// //take example of properties
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// take example of properties
 // console.log(array.sort());
 // // Objects and
 // let obj = { left: 1, right: 2, center: 4 };
@@ -400,14 +511,14 @@
 
 //Rest Parameter
 //rest parameter are use to pass the multiple values to the given function
-function max(...numbers) {
-    let result = -Infinity;
-    for (let val of numbers) {
-        if (val > result) result = val;
-    }
-    return result;
-}
-console.log(max(1, 4, 5, -8))
+// function max(...numbers) {
+//     let result = -Infinity;
+//     for (let val of numbers) {
+//         if (val > result) result = val;
+//     }
+//     return result;
+// }
+// console.log(max(1, 4, 5, -8))
 /* important points to note down here */
 
 // let array = [ 1,2,3,4,6,9]
@@ -425,105 +536,105 @@ console.log(max(1, 4, 5, -8))
 // console.log(fruits)
 
 // destructring 
-let destructring = [1, 2, 4, 5, 66]
-let [x, y, z, ...rest] = destructring;
-console.log(x)
-console.log(rest)
-// destructruing in object values
-let { name, age } = { name: "Faraji", age: 23 };
-console.log(age)
-/*Json basically means  serilization of data for
- sending or storing to  the file
- what can be further noticed that Json is just j
- avascript object 
-*/
-let string = JSON.stringify({
-    squirrel: false,
-    events: ["weekend"],
-    mood: "[jfhfhfhfhfh]"
-});
-console.log(string)
-console.log(JSON.parse(string).mood)
-// summrary of the chapter
-console.log(string)
-// let deifne what is property in javascript of array and objects
-// SO objects tends to use name for there property , where as Array uses value such as [0],[1], to acees there property name;
+// let destructring = [1, 2, 4, 5, 66]
+// let [x, y, z, ...rest] = destructring;
+// console.log(x)
+// console.log(rest)
+// // destructruing in object values
+// let { name, age } = { name: "Faraji", age: 23 };
+// console.log(age)
+// /*Json basically means  serilization of data for
+//  sending or storing to  the file
+//  what can be further noticed that Json is just j
+//  avascript object 
+// */
+// let string = JSON.stringify({
+//     squirrel: false,
+//     events: ["weekend"],
+//     mood: "[jfhfhfhfhfh]"
+// });
+// console.log(string)
+// console.log(JSON.parse(string).mood)
+// // summrary of the chapter
+// console.log(string)
+// // let deifne what is property in javascript of array and objects
+// // SO objects tends to use name for there property , where as Array uses value such as [0],[1], to acees there property name;
 
-// exercise question for chapter 4
-let rangeArray = [];
-function range(start, end ,step) {
-    if(step > 0){
-        for (let i = start; i <= end; i+= step||1) {
-            rangeArray.push(i)
-        }
-        return rangeArray
-    }else{
-        for (let i = start; i <= end; i-= step) {
-            rangeArray.push(i)
-        }
-        return rangeArray
-    }
+// // exercise question for chapter 4
+// let rangeArray = [];
+// function range(start, end ,step) {
+//     if(step > 0){
+//         for (let i = start; i <= end; i+= step||1) {
+//             rangeArray.push(i)
+//         }
+//         return rangeArray
+//     }else{
+//         for (let i = start; i <= end; i-= step) {
+//             rangeArray.push(i)
+//         }
+//         return rangeArray
+//     }
 
-}
-console.log(range(10, 100 ,-5))
+// }
+// console.log(range(10, 100 ,-5))
 
-function sum(sumArray) {
-    let total=0;
-    for (let i = 0; i < sumArray.length; i++) {
-        total += sumArray[i] 
-    }
-    return total;
+// function sum(sumArray) {
+//     let total=0;
+//     for (let i = 0; i < sumArray.length; i++) {
+//         total += sumArray[i] 
+//     }
+//     return total;
     
-}
-console.log(sum([3,4,5,6]))
-// Reversing an array
-let arrayToBeReverse =[2,3,5,6,7]
-function reverseArray(arrayToBeReverse){
-    let output = []
-    for(let i = arrayToBeReverse.length -1 ; i > -1;i--){
-        output.push(arrayToBeReverse[i]);
-    } return output;
-}
-console.log(reverseArray(arrayToBeReverse))
+// }
+// console.log(sum([3,4,5,6]))
+// // Reversing an array
+// let arrayToBeReverse =[2,3,5,6,7]
+// function reverseArray(arrayToBeReverse){
+//     let output = []
+//     for(let i = arrayToBeReverse.length -1 ; i > -1;i--){
+//         output.push(arrayToBeReverse[i]);
+//     } return output;
+// }
+// console.log(reverseArray(arrayToBeReverse))
 
 
-function reverseArray1(arrayToBeReverse1){
-    let output=[];
-    for(let i = 0 ;i < arrayToBeReverse1.length ; i++){
-        output.unshift(arrayToBeReverse1[i])
-        console.log(output)
-    } return output;
-}
-console.log(reverseArray1(arrayToBeReverse))
+// function reverseArray1(arrayToBeReverse1){
+//     let output=[];
+//     for(let i = 0 ;i < arrayToBeReverse1.length ; i++){
+//         output.unshift(arrayToBeReverse1[i])
+//         console.log(output)
+//     } return output;
+// }
+// console.log(reverseArray1(arrayToBeReverse))
 
-// objects question for practise;
-function arrayToList(toBeList){
-    let outputList = null;
-    for(let o = toBeList.length -1 ; o > -1; o--){
-        outputList ={
-            value:toBeList[o],
-            rest:outputList
-        }
-        console.log("toBeList[i]",outputList)
-    } return outputList;
-}
+// // objects question for practise;
+// function arrayToList(toBeList){
+//     let outputList = null;
+//     for(let o = toBeList.length -1 ; o > -1; o--){
+//         outputList ={
+//             value:toBeList[o],
+//             rest:outputList
+//         }
+//         console.log("toBeList[i]",outputList)
+//     } return outputList;
+// }
   
-console.log(arrayToList([1,2,3]))
+// console.log(arrayToList([1,2,3]))
 
-// from list to array.
-let finallist = {
-     value: 1, rest: { value: 2, rest: { value: 3, rest: null 
-    } 
-} 
-}
+// // from list to array.
+// let finallist = {
+//      value: 1, rest: { value: 2, rest: { value: 3, rest: null 
+//     } 
+// } 
+// }
 
 
-function listToarray(toBeArray){
-    let outputArray =null;
-    for(let i = toBeArray.length-1; i > -1 ; i--){
-       console.log(Object.keys(toBeArray(i)))
-    }
+// function listToarray(toBeArray){
+//     let outputArray =null;
+//     for(let i = toBeArray.length-1; i > -1 ; i--){
+//        console.log(Object.keys(toBeArray(i)))
+//     }
 
-}
-console.log(listToarray(finallist))
+// }
+// console.log(listToarray(finallist))
 
