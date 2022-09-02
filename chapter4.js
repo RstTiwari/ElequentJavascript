@@ -51,14 +51,50 @@ if("sub" in  details){
 // finding the key of an object
 let key = Object.keys(details.other)
 let value = Object.values(details)
-console.log(key);
-console.log(value);
+//console.log(key);
+//console.log(value);
+
+//====>>> MUTABILTY 
+//--- all Sting , Number , Boolen values are immutable 
+
+const object1 = {value:1}
+const object2 = object1;
+const object3 = {value :1}
+console.log(object1 == object2)  // bcs both are refering to same memory location , where they stored
+console.log(object1 == object3);  // both are same but False becasue diffrent memory location
+
+// this is allowed 
+object1.value =  10
+// this is not allowe 
+// object1 = {value:11 , home:12}
+console.log(object1)
+
+
+//====>>>> METHODS of ARRAY
+
+// You can keep Reminding yourself for this kind of Method
 
 
 
 
+//====>>> METHODS OF STRING
+/*One difference is that a string’s indexOf can search for a string containing
+more than one character, whereas the corresponding array method looks only
+for a single elemen  */ 
+//console.log("one two three for Five six seven".indexOf("e"));
+let name1 = "ROHItKumar   Tiwari ".trim()
+//console.log(name1)
 
+console.log(String(24566).padStart(3,0))  // Learn More about padding
+// split Method
+let sentence = "Secretarybirds/specializ/in stomping"; 
+ let words = sentence.split('/')
+console.log(words);
+// join method
+sentence = words.join(",")
+console.log(sentence);
 
+// Repeat Method is There
 
 
 
