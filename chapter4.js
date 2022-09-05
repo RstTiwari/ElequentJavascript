@@ -67,7 +67,7 @@ console.log(object1 == object3);  // both are same but False becasue diffrent me
 object1.value =  10
 // this is not allowe 
 // object1 = {value:11 , home:12}
-console.log(object1)
+//console.log(object1)
 
 
 //====>>>> METHODS of ARRAY
@@ -85,16 +85,65 @@ for a single elemen  */
 let name1 = "ROHItKumar   Tiwari ".trim()
 //console.log(name1)
 
-console.log(String(24566).padStart(3,0))  // Learn More about padding
+//console.log(String(24566).padStart(3,0))  // Learn More about padding
 // split Method
 let sentence = "Secretarybirds/specializ/in stomping"; 
  let words = sentence.split('/')
-console.log(words);
+//console.log(words);
 // join method
 sentence = words.join(",")
-console.log(sentence);
+//console.log(sentence);
 
 // Repeat Method is There
+//console.log("rohit".repeat(3))
+
+
+
+//==>>>RestParameter
+
+// function to calculate the Max Numeber from all Number
+function max(...numbers){
+  let result = -Infinity // variable - Infinnity usaed beacuse to compare the numbers from this Number
+  for(let number of numbers){
+    if(number > result) result = number
+  }
+  return result
+}
+
+console.log(max( -1 ,-1 , -3 , -5 ,0));
+
+
+// function to get the smallest numbers of all the Number
+
+function min (...numbers){
+  let result = 1/0
+  for(let number of  numbers){
+    if(number <  result)  result  = number
+  }
+  return result
+}
+
+console.log(min(6,7,8,9,0, -1,-4))
+// infinity is Predefiend Value , we can make our own var
+// let result = 1/0 (value of which is infinite Only)
+
+
+// Destructuing an array
+// calling the same above function with array
+let numbers = [ 2, 3, 5,6,-1, 8 ,10,-1, -2 ,3 ,-5  ,-5 ,-111,-2938]
+console.log(max(...numbers))
+console.log(min(...numbers))
+
+//entering new array inside an existing array
+let items  = ["Books" , "Fruits" , "choclates" ,"Vanial" , "Cucumber"]
+let newItem = ['Coding' , "Reding" ,"Repeating"]
+items = [...items ,...newItem]
+//console.log(items)
+
+let items1 = [items , newItem]
+for(let item of items1){
+  console.log(item[0])
+}
 
 
 
