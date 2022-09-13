@@ -1,4 +1,5 @@
-// High Order Function
+//====>>>High Order Function
+
 
 // Abstractions = abstraction hide details and talk about problems.
 
@@ -7,9 +8,9 @@
      for(let i = 0 ; i < n ; i++){
          action(i)
      }
-
  }
- repeat(3 , console.log) 
+
+ //repeat(3 , console.log) 
 
  let labels = [];
 
@@ -17,7 +18,7 @@
      labels.push(`Unit ${i +1}`)
  } )
 
- console.log(labels)
+ //console.log(labels)
 
  // Abstraction repetition function for Writting table
 
@@ -28,17 +29,21 @@
  }
 let  twoTable  = [];
  table(10, i => twoTable.push(`two ${i} = ${i*2}`))
- console.log(twoTable)
+ //console.log(twoTable)
 
- // high order function => function which operates on other function by taking them as argument or by returning them are called HighorderFunction
- // function that create new function
+ /* high order function => function which operates on other function by taking them as 
+ argument or by returning them are called HighorderFunction */
+
+
+ //==>> function that create new function
+ // this is also concept of closure
 
  function greaterThan(n){
      return m => m > n ;
  }
 
  let newValue  = greaterThan(5)
- console.log(newValue(6))
+ //console.log(newValue(6))
 
  // function that changes the other function;
  // i need to study this function ;
@@ -52,8 +57,15 @@ let  twoTable  = [];
 
  repeat(6 ,  n => {
      flowChanger( n % 2 == 0, () =>{
-         console.log(n , "is even number")
+         //console.log(n , "is even number")
      })
+ })
+
+
+ repeat(8 , n => {
+    flowChanger(n % 3 == 0 , ()=>{
+       // console.log(n ,"is odd Number")
+    })
  })
 
  // using script model to learn or check the filter concept;
@@ -72,15 +84,30 @@ let  twoTable  = [];
      return passed;
  }
 
-  let rtl
-   = console.log(filter(Script , item => item.direction =="ltr"));
- // now  we can write the same htread like this
+ // how filter method can be written in simple function
+ function  fiterMethod(input , test){
+    let newArray = [];
+    for(let val  of input){
+        if(test(val))
+        newArray.push(val)
+    }
+    return new array;
+}
 
+//console.log(fiterMethod());
+
+let oldestLanguges = filter(Script , item => item.year == 1000);
+//console.log("oldest", oldestLanguges);
+
+
+// now  we can write the same  like this
  let ltr = Script.filter(item => item.direction == "ltr");
 
- /*Map method  =  Map method tranform an array by applying
-  function to all the elements of array , the length on new array will be same as the lenth of input array but 
+ /* ==>>  Map method  =  Map method tranform an array by applying
+  function to all the elements of array , the length on 
+  new array will be same as the lenth of input array but 
   elemnts will be changed as per defind function */
+
    function map( script , test){
        let mapped = [];
        for (let element of script){
@@ -89,12 +116,24 @@ let  twoTable  = [];
            }
        }return mapped;
    }
-console.log(map( ltr , item => item.ranges));
 
-//*** u can store varibale with applying console.log */
+let newValue1 = ["UP", "MAHARASTRA" , "KARNATKA" ,"TAMILNADU" , "TELEGANA"]   
 
+let value1 = Script.map((item) => {
+  newValue1.map((item2) => {
+
+      // console.log(item, item2)
+
+  });
+});
+//console.log(value1)
+
+// u can store varibale with applying console.log 
 // we can again short hand the proerty with map
-console.log(ltr.map(item => item.ranges))
+
+//console.log(ltr.map(item => item.ranges))
+
+
 
 /* Reduce*/
  function reduce (array , combine , start) {
@@ -106,27 +145,64 @@ console.log(ltr.map(item => item.ranges))
      return current
  }
 
-console.log(reduce([2,3], (a , b) => a  * b , 1 ))
-// the other way of Using the  reduce method npow u to gain the knowledge from here onwords
+//console.log(reduce([2,3], (a , b) => b**a , 1 ))
+// always use "b" first and "a" second on reduce method
+//the other way of Using the  reduce method npow u to gain the knowledge from here onwords
 
-console.log([2,3,4,5,6].reduce((a,b) =>  a + b ,0))
+//another example for standard reduce function
+let array = [1,2,3,5,7,11,17,23,29 ,31]
+function likeReduce (array , combine , start){
+    let current = start;
+    for(let num in array){
+         current = combine(current, num);
+
+    }
+    return  current
+
+}
+let likeReduceValue = likeReduce(array ,(a, b) => a  + b , 0)
+//console.log(likeReduceValue);
+
+// another standard function for Reducer
+function reduce(array, combine, start) {
+  let current = start;
+  for (let element of array) {
+    current = combine(current, element);
+  }
+  return current;
+}
+//console.log(reduce([1, 2, 3, 4], (a, b) => a + b, 0));
+
+//===> Learning to write reduce function in Short hand Format
+console.log(array.reduce((a ,b) => b + a , 1))
+
+//Now using standard script to test reduce Function
+let scriptValue = Script.reduce((from , to) =>{
+    return  Script
+
+}, 1)
+
+console.log(scriptValue);
 
 
-// creating function to find the maximu characters;
+
+
+//creating function to find the maximum characters;
 function characterCount(script){
     script.ranges.reduce((count ,[from , to] )=>{
-        console.log("---",count ,from ,to)
+        //console.log("---",count ,from ,to)
         return  count + (to + from)
     }, 0)
 }
 
-console.log(Script.reduce((a, b) =>{
-    console.log("....",b ,a)
-    return  characterCount(a) < characterCount(b) ? b :a
-}))
+// console.log(Script.reduce((a, b) =>{
+//     console.log("....",b ,a)
+//     return  characterCount(a) < characterCount(b) ? b :a
+// }))
 
-//Composabilty  
 
+
+//===>>>>Composabilty  
 let biggest = null ;
 
 for(let script of Script){
@@ -134,5 +210,5 @@ for(let script of Script){
         biggest = script
     }
 }
-console.log(biggest)
+//console.log(biggest)
 
