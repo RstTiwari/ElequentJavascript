@@ -23,7 +23,7 @@ whiteRabbit.speak("ohh the Man u are awsome ")
 hungarryRabit.speak("i can use the carrat right now")  
 
 // we can use  call method for explicitly using this method
-console.log(speak.call(hungarryRabit , "Burpppppp"))
+//console.log(speak.call(hungarryRabit , "Burpppppp"))
 
 // Defining Method Using the array function
 
@@ -36,3 +36,22 @@ let running = {type:"Running" , action}
 
 //====>>> PROTOTYPE
 //prodtotype : prototypes are another object
+//Prototypes are the mechanism by which objects in JavaScript inherit features from another object
+
+//===>>> CLASSES
+
+//==>CLASS NOTATION
+
+class Rohit {
+    constructor(type){
+        this.type = type
+    }
+
+    speak(line){
+        console.log(`This ${this.type} Rabbit can speak ${line}`)
+    }
+}
+
+
+let rohitBro  = new Rohit("Weried")
+console.log(rohitBro.speak())
