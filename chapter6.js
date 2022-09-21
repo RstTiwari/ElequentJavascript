@@ -47,11 +47,30 @@ class Rohit {
         this.type = type
     }
 
-    speak(line){
-        console.log(`This ${this.type} Rabbit can speak ${line}`)
+    speak(){
+        console.log(`This ${this.type} Rabbit can speak `)
     }
 }
 
-
 let rohitBro  = new Rohit("Weried")
-console.log(rohitBro.speak())
+
+rohitBro.speak()
+
+
+//SYMBOLS are Topic needs to Be Learn On Qucik Basis
+
+
+//get setter and Statics
+class Tempreature{
+    constructor(tem){
+        this.tem = tem
+    }
+
+    get farhnit(){
+        console.log(`The CurrentTem is ${tem/2}`)
+    }
+
+    set farhnit(value){
+        this.celsius = (value-32)/1.8
+    }
+}
