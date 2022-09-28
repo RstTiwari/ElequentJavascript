@@ -61,16 +61,21 @@ rohitBro.speak()
 
 
 //get setter and Statics
-class Tempreature{
-    constructor(tem){
-        this.tem = tem
-    }
-
-    get farhnit(){
-        console.log(`The CurrentTem is ${tem/2}`)
-    }
-
-    set farhnit(value){
-        this.celsius = (value-32)/1.8
-    }
+class Temperature {
+  constructor(celsius) {
+    this.celsius = celsius;
+  }
+  get fahrenheit() {
+    return this.celsius * 1.8 + 32;
+  }
+  set fahrenheit(value) {
+    this.celsius = (value - 32) / 1.8;
+  }
 }
+
+
+const newVal = new Temperature(30);
+console.log("tem" , newVal.fahrenheit)
+
+newVal.fahrenheit =  26;
+console.log("object ," , newVal.fahrenheit)
