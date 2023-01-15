@@ -9,6 +9,10 @@ function checkArray (input){
         return false
     }   
 }
+Array.prototype.checkForArray{
+    if(this.isArray)return true
+    else{return false}
+}
 //console.log(checkArray([1,3,4,5]))
 
 // 2) Write a JavaScript function to clone an array.
