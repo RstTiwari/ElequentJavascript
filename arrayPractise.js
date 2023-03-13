@@ -42,6 +42,7 @@ function lastN(input, n){
     console.log(input);
      return input.slice(Math.max(input.length-n , 0))
 }
+
 console.log(lastN([9, 4, 5, 6, 978], 3));
 
 

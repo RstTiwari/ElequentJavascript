@@ -799,3 +799,35 @@ console.log(checkObject({ key: 1, value: 2 }, { key1: 1, value: 2 }));
 
 // }
 // console.log(listToarray(finallist))
+
+let newObj = {
+  rohit:"the key are Value",
+  class:"10Std",
+  sub:["math","english","newBook"],
+}
+
+Object.assign(newObj ,["THe all new","The wholeWorls","the new Class"])
+//console.log(newObj)   // uncommnent when want to check
+
+// function to calculate the Max Numeber from all Number
+function max(...numbers) {
+  console.log(numbers)
+  let result = -Infinity; // variable - Infinnity usaed beacuse to compare the numbers from this Number
+  for (let number of numbers) {
+    if (number > result) result = number;
+  }
+  return result;
+}
+
+console.log(max(-1, -1, -3, -5, 0,100));
+
+function findMax (numbers){
+  let result = Infinity;
+  for(let number of numbers){
+    if(number < result) result = number;
+
+  }
+  return result
+}
+
+console.log(findMax([2,3,6,-9 ,199, -100]))
