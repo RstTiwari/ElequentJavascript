@@ -92,6 +92,7 @@ console.log([1,2].toString())
 console.log([1, 2][toStringSymbol]());
 
 //get setter and Statics
+
 class Temperature {
   constructor(celsius) {
     this.celsius = celsius;
