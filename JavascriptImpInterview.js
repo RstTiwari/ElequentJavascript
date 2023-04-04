@@ -89,26 +89,26 @@
 // let newObj = {"name":"Rohit"} // watch Vidoe
 
 
-// 3  What is the difference between Call, Apply and Bind
+// // 3  What is the difference between Call, Apply and Bind
 
-// call invokes a functon passed as with this paramertes and arugments passed one by onew
+// // call invokes a functon passed as with this paramertes and arugments passed one by onew
 
-let rohit = {"hindi":39 , "english":40 ,history:40};
-let rohit2 = { hindi: 39, english: 40, history: 40 };
- function calculatePer (param1 ,parma2){
-      let RohitPercentage = (this.hindi/param1 + this.english/parma2)*100;
-      return RohitPercentage
- }
+// let rohit = {"hindi":39 , "english":40 ,history:40};
+// let rohit2 = { hindi: 39, english: 40, history: 40 };
+//  function calculatePer (param1 ,parma2){
+//       let RohitPercentage = (this.hindi/param1 + this.english/parma2)*100;
+//       return RohitPercentage
+//  }
 
-console.log(calculatePer.call(rohit , 100 , 80));
+// console.log(calculatePer.call(rohit , 100 , 80));
 
-//apply  invokes a function  passed with "this" parametres and arguments passed as an array;
-console.log(calculatePer.apply(rohit2,[100,100,100]));
+// //apply  invokes a function  passed with "this" parametres and arguments passed as an array;
+// console.log(calculatePer.apply(rohit2,[100,100,100]));
 
-// Bind  return new function allowing you to pass any numbers of aruguments
+// // Bind  return new function allowing you to pass any numbers of aruguments
 
-let markesheet =  calculatePer.bind(rohit);
-console.log(markesheet(100,100))
+// let markesheet =  calculatePer.bind(rohit);
+// console.log(markesheet(100,100))
 
 
 
