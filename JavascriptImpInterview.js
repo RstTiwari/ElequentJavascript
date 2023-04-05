@@ -110,5 +110,60 @@
 // let markesheet =  calculatePer.bind(rohit);
 // console.log(markesheet(100,100))
 
+// // 4 ) purpose of slice Method
+// // returns new array without changng the original Array
+// let array = [23,2,89,98]
+// let slicedArray = array.slice(2,-1)
+// console.log(slicedArray)
 
 
+//  // Q-5   purspose of splice method in array
+//  let splicedArray = array.splice(3 ,4,4)
+//  console.log(splicedArray)
+// console.log(array)
+
+
+// // Q 6 Maps and Object diffrences;
+// let map1 = new Map();
+// map1.set("boy","Rohit");
+// map1.set("class" ,8);
+// map1.set("new" ,"history")
+
+// console.log(map1.has("boy"));
+// for(let item of map1){
+//     console.log(item)
+// }
+
+// // Q 7 === and == opreators
+// console.log([] == [])  // false
+// console.log([] === []); // false
+
+// Q 8 First Class function
+// fucntion which can be treated like a variable , wherer u can pass function to other function and return function from function
+
+// // Q 9  Higher order function;
+// const firstClassFucntion = ()=>{
+//     console.log("i am first class function")
+// };
+
+// const highOrderFunction = (returFirstClassFucntion)=>  returFirstClassFucntion();
+// highOrderFunction(firstClassFucntion)
+
+// // Q 10 CurryFunction ;
+
+// const multiArgument = (a,b,c) => a + b + c;
+// console.log(multiArgument(2,3,5))
+
+// const  curryUniaryFunction = (a) =>(b) =>(c) => a + b + c;
+// let value = curryUniaryFunction(2)(3)(5)
+// console.log(value)
+
+//  function calculateCube(length){
+//     return function(width){
+//         return function(height){
+//             return length+ width + height
+//         }
+//     }
+//  }
+
+//  console.log(calculateCube(6)(7)(8))
