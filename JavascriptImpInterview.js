@@ -1,39 +1,39 @@
-// started learning from Git Hub
+//started learning from Git Hub
 
-// 1) Diffrent way of Initiating an Object in js
-// object constructor
+//1) Diffrent way of Initiating an Object in js
+//object constructor
 // let object = new Object();
 // object["name"] = "Rohit"
 // object["class"] = [12,2,12]
 // console.log(object , typeof object)
 
-// //  object create method;
-// let object = Object.create({});
-// console.log(object)
+// // //  object create method;
+// // let object = Object.create({});
+// // console.log(object)
 
-// // object literal syntax ;
-// let object = {
-//     name:"ROhit",
-//     class:"Rohit"
-// }
+// // // object literal syntax ;
+// // let object = {
+// //     name:"ROhit",
+// //     class:"Rohit"
+// // }
 
 
-// // object function constructor
-// export function Person(name){
-//     this.name = name,
-//     this.class ="10"
-// }
+// // // object function constructor
+// //  function Person(name){
+// //     this.name = name,
+// //     this.class ="10"
+// // }
 
-// let object = new Person("rohit");
-// console.log(object.name);
+// // let object = new Person("rohit");
+// // console.log(object.name);
 
-// // functional prototype constructor;
-// function Person (){};
-// Person.prototype.name = "Rohit"
-// Person.prototype.std = "12,1,14";
+// // // functional prototype constructor;
+// // function Person (){};
+// // Person.prototype.name = "Rohit"
+// // Person.prototype.std = "12,1,14";
 
-// let NewPerson = new Person();
-// console.log(NewPerson.name)
+// // let NewPerson = new Person();
+// // console.log(NewPerson.name)
 
 // //ES6 syntax constructor Type;
 // const  Person = class {
@@ -138,8 +138,8 @@
 // console.log([] == [])  // false
 // console.log([] === []); // false
 
-// Q 8 First Class function
-// fucntion which can be treated like a variable , wherer u can pass function to other function and return function from function
+// //Q 8 First Class function
+// //fucntion which can be treated like a variable , wherer u can pass function to other function and return function from function
 
 // // Q 9  Higher order function;
 // const firstClassFucntion = ()=>{
@@ -167,3 +167,135 @@
 //  }
 
 //  console.log(calculateCube(6)(7)(8))
+
+
+//  // Q -11 How do you redeclare let variables in switch block without an error   ;
+
+//  let counter = 1
+
+//  switch (counter) {
+//    case 0:{
+//      let name = "rohit";
+//      console.log(name)
+//    }
+//      break;
+//    case 1:{
+//      let name = "Kumar ";
+//       console.log(name);
+//    }
+//      break;
+
+//    default:
+//      break;
+//  };
+
+
+ //  Q -12 Temporal Dead Zone
+// function TemporalDeadZone (){
+//     console.log(counter);
+//     console.log(counter1);
+//     var counter = 20;
+//     let counter1 = 30
+//     console.log(counter1);
+
+// }
+// console.log(TemporalDeadZone());
+
+// // Q -12 iifE ;
+
+// (()=>{
+// console.log("iife")
+// })();
+
+// (function (){
+//     console.log("iiff without the help of arow function")
+// }) ()
+ 
+
+// // 13 encodeUrl and decodeUrl ' or anything using javaScript
+// let uri = "employeeDetails?name=john&occupation=manager";
+// let encoded_uri = encodeURIComponent(uri);
+// let decoded_uri = decodeURIComponent(encoded_uri);
+// console.log(encoded_uri)
+// console.log(decoded_uri);
+
+// Q -14 Memorization  fucntion which case
+
+const memorization = () => {
+  let cahedData = {};
+  return function (value) {
+    if (value in cahedData) {
+      console.log("Fetched form cahedData");
+      return cahedData[value];
+    } else {
+      console.log("fetching the data form  databae");
+      let result = value + 20 + 30;
+      cahedData[value] = result;
+      return result
+    }
+  };
+};
+
+let calculate = memorization();
+console.log(calculate(20))
+console.log(calculate(20));
+
+const memorization2 = () => {
+  let cached = {};
+  return function (param) {
+    if (cached.param) {
+      console.log(param, "found in chached");
+      return cached[param]
+    } else {
+      let couponId = "rohit" + param;
+      console.log("couponId",couponId)
+      cached[param] = couponId;
+      return couponId;
+    }
+  };
+};
+
+let memorized1 = memorization2();
+let memorized2 = memorization2();
+console.log(memorized1(12345))
+console.log(memorized1(12345));
+
+// Q 15 Closure Question With Example;
+let variable = 30
+
+ function calculte (a){
+  
+  let b = 20;
+  function  addition (b){
+    return multiply(3.5)
+  };
+   function multiply (b){
+     console.log(a + b + variable);
+   }
+   addition()
+
+ }
+
+let closureTest = calculte(30);
+
+// another function for another Closures
+const welcome = (user)=>{
+    function greetingInfo(msg){
+      return personlizeMsg(user ,msg)
+    }
+    function personlizeMsg (user, msg){
+      return `myfac8ry welcomes you ${user} ${msg}`
+    }
+    return greetingInfo
+
+}
+let user = welcome("ROhit");
+let msg = user("You are such nice person")
+console.log(msg)
+
+// sessionStorage localStorage ,cookies
+
+let token = localStorage.setItem("token",msg)
+let session = sessionStorage.setItem("token", msg);
+let cookies =document.cookie = "cookie1=test; expires=Sun, 1 Jan 2023 00:00:00 UTC; path=/";
+console.log(cookies)
