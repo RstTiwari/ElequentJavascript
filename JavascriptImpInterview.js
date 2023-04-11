@@ -295,7 +295,77 @@ console.log(msg)
 
 // sessionStorage localStorage ,cookies
 
-let token = localStorage.setItem("token",msg)
-let session = sessionStorage.setItem("token", msg);
-let cookies =document.cookie = "cookie1=test; expires=Sun, 1 Jan 2023 00:00:00 UTC; path=/";
-console.log(cookies)
+// let token = localStorage.setItem("token",msg)
+// let session = sessionStorage.setItem("token", msg);
+// let cookies =document.cookie = "cookie1=test; expires=Sun, 1 Jan 2023 00:00:00 UTC; path=/";
+// console.log(cookies)
+
+// Q what is promise  => promise is an object which resolved into specific value near time in future
+
+const promise = new Promise(
+  (resolve) => {
+    setTimeout(() => {
+      resolve("rohit");
+    }, 5000);
+  },
+  (reject) => {
+    reject("promise rejected");
+  }
+);
+
+promise.then((value)=>{console.log(value)})
+
+//  Q - Promise Chaning in javascript
+
+let value = new Promise(function(resolve,reject){
+   setTimeout(resolve(2),1000),
+   reject("throw an error")
+})
+.then(function(result){
+  console.log(result)
+  return result**2
+})
+.then(function (result){
+  console.log(result);
+  return result ** 2;
+})
+.then(function(result){
+  console.log(result);
+  return result**2
+})
+console.log("value",value)
+
+// Q Delete Operatore
+
+let deleteobj = {"name":"Rohit",class:"10"}
+
+delete deleteobj["name"];
+console.log(deleteobj)
+
+// Eval functionality ;
+ if(eval( 2 + 3 == 5)){
+  console.log("eval function")
+ }
+
+ console.log(isNaN("100K"))
+
+ // Q isFinite function ;
+console.log(isFinite(-100))
+console.log(isFinite(Infinity));
+
+// Q how to check if key exist in object ;
+let checkObject = {
+  class:"10",
+  rank:"topper",
+  School:"SSS"
+}
+
+if("School" in checkObject){
+  console.log(checkObject.School)
+}
+
+// Q looping throught a key;
+
+for(let key in checkObject){
+  console.log(key ,checkObject[key])
+}
