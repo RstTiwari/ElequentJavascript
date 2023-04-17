@@ -369,3 +369,74 @@ if("School" in checkObject){
 for(let key in checkObject){
   console.log(key ,checkObject[key])
 }
+
+// What is purpose of clearTmeout Method;
+
+// Testing string contains subString or Not
+
+let string = "Rohit kumar"
+let regex = /Roh/;
+let test = regex.test(string)
+console.log("rohit",test)
+
+
+// How To test if objecxt is Empty or Not;
+let emptyObejct = {};
+let emptyTest =  Object.entries(emptyObejct).length === 0 && emptyObejct.constructor  === Object ;
+console.log(emptyTest);
+
+
+// Q  What is an arguments Object , arguments passed to that function;
+function argumentFunction (){
+  console.log(arguments);
+  let newArg = Array.prototype.slice.call(arguments)
+  console.log(newArg);
+
+}
+let toArray = {"name":"Rohit","class":10}
+let emptyArray = Array.prototype.slice.call(toArray);
+console.log(emptyArray, "emptyArray");
+argumentFunction(3,4,5);
+  let newArray = [];
+
+for(let i in toArray){
+  newArray.push({i:toArray[i]})
+}
+console.log(newArray);
+
+
+//  Q - Regular expression string methid
+let RegexMsg = " hello Rohit b    123 kumarllo\
+lllllmllo";
+
+let n = RegexMsg.search(/a|b/ig);
+console.log("regex postion", n)
+let replacedMsg = RegexMsg.replace(/lLo/ig ,"ll00");
+console.log(replacedMsg);
+
+//  Bracket Method
+
+let  a = /[aA-zZ]/g  // for char
+let  b = /[0-9]/g  // for numbers;
+let  c = /[a|b]/g  // for numbers
+
+let charRegex = RegexMsg.match(a);
+let numberRegex = RegexMsg.match(b);
+let alternateRegex = RegexMsg.match(c);
+
+console.log("bracketRegex", charRegex, numberRegex, alternateRegex);
+
+// Metaverse method;  charachterse with special meaning;
+let digitRegex = /\d/g
+let whiteSpaceRegex = /\s/;
+let beginAndEndRegex = /\b/;
+
+console.log("===",
+  RegexMsg.match(digitRegex),
+);
+console.log("whiteSpace", RegexMsg.match(whiteSpaceRegex));
+console.log("beginAndEnd",beginAndEndRegex);
+
+// Quantifiers Method these are useful to define Quantifiers;
+let nplusRegex = /o*/;
+console.log("this new Method",RegexMsg.search(nplusRegex))
