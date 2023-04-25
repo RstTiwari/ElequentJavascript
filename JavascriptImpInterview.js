@@ -440,3 +440,5 @@ console.log("beginAndEnd",beginAndEndRegex);
 // Quantifiers Method these are useful to define Quantifiers;
 let nplusRegex = /o*/;
 console.log("this new Method",RegexMsg.search(nplusRegex))
+
+// con
